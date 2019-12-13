@@ -2,14 +2,14 @@
   <div class="index">
     <el-container>
       <el-header>
-        <el-menu default-active="/" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-          <el-submenu index="1">
+        <el-menu :router='true' class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-submenu index="/">
             <template slot="title">我的工作台</template>
             <el-menu-item :index="item.path" v-for="(item, i) in routeList" :key="i">
               {{item.meta.title}}
             </el-menu-item>
           </el-submenu>
-          <el-menu-item index="3" disabled>啥都没有</el-menu-item>
+          <el-menu-item index="3">啥都没有</el-menu-item>
           <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
         </el-menu>
       </el-header>
