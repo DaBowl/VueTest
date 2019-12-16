@@ -1,53 +1,26 @@
 <template>
   <div class="index">
-    <el-container>
-      <el-header>
-        <el-menu :router='true' class="el-menu-demo" mode="horizontal" @select="handleSelect">
-          <el-submenu index="/">
-            <template slot="title">我的工作台</template>
-            <el-menu-item :index="item.path" v-for="(item, i) in routeList" :key="i">
-              {{item.meta.title}}
-            </el-menu-item>
-          </el-submenu>
-          <el-menu-item index="3">啥都没有</el-menu-item>
-          <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-        </el-menu>
-      </el-header>
-      <el-main height='100%'>
-        {{tableDataView}}
-      </el-main>
-    </el-container>
+    {{tableDataView}}
   </div>
 </template>
 
 <script>
-import routes from '@/router/index'
 import { mapState } from 'vuex'
 
 export default {
   name: 'index',
   components: {
-    routes
   },
   data () {
     return {
-      routeList: []
     }
   },
   computed: mapState({
-    tableDataView: state => state.storeDemo.demoInner.tableDataView
+    tableDataView: state => state.mainStore.mainIndex.tableDataView
   }),
   mounted () {
-    this.init()
   },
   methods: {
-    init () {
-      this.routeList = routes.options.routes[0].children
-      console.log(this.routeList)
-    },
-    handleSelect (path) {
-      console.log('当前菜单path', path)
-    }
   }
 }
 </script>

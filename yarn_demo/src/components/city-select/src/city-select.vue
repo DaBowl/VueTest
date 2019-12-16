@@ -13,7 +13,6 @@
 
 export default {
   name: 'ScmCitySelect',
-  // ! FIXME 用于筛选器判断取得当前组件所显示Label名字
   componentName: 'ScmCascader',
   props: {
     level: {
@@ -50,38 +49,17 @@ export default {
   },
   data () {
     return {
-      propsDynamic: {
-        value: 'addrCode',
-        label: 'addrName',
-        checkStrictly: this.checkStrictly
-      },
-      requestOptions: [],
-      inner: [],
-      levelMapping: ['PROVINCE', 'CITY'],
-      isClickChange: false
     }
   },
   computed: {
-    presentText () {
-      return this.$refs.cascader.presentText
-    }
   },
   mounted () {
-    this.getProvinceAndCity()
   },
   methods: {
   }
 }
 </script>
 
-<style lang="scss">
-  .el-cascader {
-    width: 100%;
-  }
-  .el-cascader-menu__item{
-    padding-right: 30px;
-  }
-</style>
+<style lang="scss" scope>
 
-<style lang="scss" scoped>
 </style>

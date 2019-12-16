@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/pages/index'
-const HelloWorld = () =>
-import(/* webpackChunkName: "HelloWorld" */ '@/components/HelloWorld')
+const first = () =>
+import(/* webpackChunkName: "first" */ '@/pages/level-first/index')
+const second = () =>
+import(/* webpackChunkName: "first" */ '@/pages/level-second/index')
+const index = () =>
+import(/* webpackChunkName: "index" */ '@/pages/index')
 Vue.use(Router)
 
 export default new Router({
@@ -11,22 +14,19 @@ export default new Router({
       path: '/',
       name: 'index',
       meta: { title: '首页' },
-      component: index,
-      children: [
-        {
-          path: 'hellow',
-          name: 'HelloWorld',
-          component: HelloWorld,
-          meta: { title: '你好' }
-        },
-        {
-          path: 'first',
-          name: 'first',
-          component: index,
-          meta: { title: '首页' }
-        }
-      ]
+      component: index
+    },
+    {
+      path: '/first',
+      name: 'first',
+      component: first,
+      meta: { title: '第一' }
+    },
+    {
+      path: '/second',
+      name: 'second',
+      component: second,
+      meta: { title: '第二' }
     }
-
   ]
 })
