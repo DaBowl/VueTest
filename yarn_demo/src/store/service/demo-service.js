@@ -1,5 +1,5 @@
 /**
- * demo
+ * demoService
  *
  * @export
  * @param {String} string
