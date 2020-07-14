@@ -7,7 +7,7 @@
  */
 export function demoService (string) {
   return new Promise((resolve) => {
-    // 测试
+
     // post(
     //   ``,
     //   { string },
