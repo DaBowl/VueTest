@@ -7,6 +7,7 @@
  */
 export function demoService (string) {
   return new Promise((resolve) => {
+    // master
     // post(
     //   ``,
     //   { string },
